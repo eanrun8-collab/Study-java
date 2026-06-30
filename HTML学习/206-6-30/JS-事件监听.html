@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-事件监听</title>
+</head>
+<body>
+    <!-- 设置两个按钮 -->
+    <!-- 1.通过标签属性进行绑定 -->
+    <input type="button" id="btn1" value="事件绑定1" onclick="on()">
+
+    <!-- 2.直接获取按钮对象属性给他设置一个onclick属性给他绑定一个函数 -->
+    <input type="button" id="btn2" value="事件绑定2">
+</body>
+
+<script>
+    function on() {
+        alert("按钮1被点击了")
+    }
+    
+    document.getElementById("btn2").onclick=function(){
+        alert("按钮2被点击了")
+    }
+</script>
+
+</html>

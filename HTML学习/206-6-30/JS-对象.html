@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象</title>
+</head>
+<body>
+    <script>
+        //Array
+        var arr=new Array(1,2,3,4);//方式一
+        var arr=[1,2,3,4]//方式二
+        arr[0]=12
+        arr[1]="hello"
+        //特点：长度可变，类型可变
+
+        var arr=[1,2,3]
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        //forEach:遍历数组中有值的元素 括号里面必须是函数
+        arr.forEach(function(e) {
+            console.log(e);
+        })
+
+        //简化：箭头函数 把function去掉并加上=>
+        arr.foeEach((e)=>{
+            console.log(e);
+        })
+
+        //push:添加元素到数组尾部
+        arr.push(10,29)
+
+        //splice:删除元素从哪开始删删几个
+        arr.splice(2,2)
+
+
+
+
+        //String
+        
+        var str=new String("Hello");//方式一
+        var str="Hello";//方式二
+
+        //charAt获取所在位置的字符
+        str.charAt(2);
+
+        //indexof检索字符串的位置
+        console.log(str.indexOf("lo"));
+        
+        //trim去除字符串左右空格
+        var s=str.trim();
+
+        //substring(start,end)截取字符串--开始索引，结束索引（含头不含尾）
+        console.log(s.substring(0,5));
+        
+
+
+
+        //自定义对象
+        var user={
+            name:"Tom",
+            age:20,
+            gender:"male",
+            eat(){
+                alert("吃饭");
+            }
+        }
+        alert(user.name);
+        user.eat();
+
+
+
+
+        //JSON 
+        // 通过JavaScript对象标记法书写的文本  多用于作为数据载体,在网络中进行数据传输
+        var userStr='{"name":"Tom","age":18,"addr":["北京","上海"]}';
+        //json字符串--js对象
+        var obj= JSON.parse(userStr)
+        alert(obj.name)
+
+        //json对象--json字符串
+        alert(JSON.stringify(obj));
+
+
+
+
+        //BOM
+        //获取
+        window.alert("Hello")
+        alter("Hello")
+
+        //方法
+        //confirm--对话框--确认：true，取消：false
+        confirm("您确定删除该条记录吗？")
+
+
+        //定时器--setInterval--周期性的执行某一个函数
+        var i=0;
+        setInterval(() => {
+            i++
+            console.log("定时器执行了"+i+"次");
+        }, 2000);
+
+
+        //定时器--setTimeout--延迟指定时间执行一次
+        setTimeout(() => {
+            console.log("JS");
+        }, 3000);
+
+
+        //Location  属性：href设置或者返回完整的URL 设置href会自动跳转到设置的网址
+        alert(location.href)
+        location.href="https://www.baidu.com";
+
+
+
+        //DOM 获取修改页面
+        document.getElementById('id名') //按 id 获取单个元素
+
+        document.getElementsByTagName('div') //按标签名获取数组
+
+        document.getElementsByClassName('类名') //按class属性获取数组
+
+        document.getElementsByName('name值') //按name属性获取数组
+
+    </script>
+</body>
+</html>

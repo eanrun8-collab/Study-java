@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-引入方式-输出语句-变量</title>
+
+    <!-- 两种引入方式 -->
+    <!-- 方式一：内部脚本 -->
+    <script>
+        alert("Hello JS");
+    </script>
+
+    <!-- 方式二：外部脚本 -->
+    <script src="js/demo.js"></script>
+     
+
+     <!-- 三种输入方式 -->
+    <script>
+
+    window.alert('Hello,JS')//弹出警告栏
+
+    document.write('Hello,JS')//写入html页面中
+
+    console.log('Hello,JS')//控制台输出
+
+    </script>
+
+</head>
+<body>
+
+    <!-- 定义变量 -->
+    <script>
+        
+        //var定义变量
+        var a=10;
+        a=张三;
+        alert(a);
+
+        //特点1：作用域比较大，全局变量
+        //特点2：可以重复定义但是会覆盖前一个保留最后一个值
+
+
+        //let：局部变量且不能重复定义 {}是代码块
+        {
+            let x=1;
+            alert(x);
+        }
+
+        //const:常量，不能改变
+        const p1=3;
+        alert(p1);
+
+
+    </script>
+   
+</body>
+</html>

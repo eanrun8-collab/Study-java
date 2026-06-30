@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-常见指令</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <!-- 用v-bind动态为href属性绑定一个变量 -->
+        <a v-bind:href="url">链接1</a>
+        <a :href="url">链接2</a>
+
+
+        </div>
+
+
+        <!-- v-model   在表单元素上创建双向数据绑定 -->
+         <div id="app"><input type="text" v-model="url">
+        </div>
+
+
+        <!-- v-on为HTML标签绑定事件 -->
+         <div id="app">
+            <input type="button" value="点我一下" v-on:clack="handle()">
+            <input type="button" value="点我一下" @clack="handle()">
+
+        </div>
+
+
+
+        <!--  v-if       条件性的渲染某元素，判定为true时渲染,否则不渲染     
+              v-if-else                                                      
+              v-else   -->
+
+
+            <div id="app">
+                 年龄<input type="text" v-model="age">经判定,为:
+                <span v-if="age <= 35">年轻人(35及一下)</span>
+                <span v-else-if="age>35 && age < 60">中年人(35-60)</span>
+                <span v-else="age > 60">老年人(60及以上)</span>
+        
+        </div>
+            
+
+
+
+            <!-- v-for: 用来遍历 -->
+            <div id="app">
+            <div v-for="x in addrs">{{x}}</div>
+            <div v-for="(x,index) in addrs">{{index+1}}:{{x}}</div>
+            </div>
+    
+
+           
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            url:"https://www.baidu.com"
+
+        }
+    })
+
+
+
+    new Vue({
+        el:'#app',
+        data:{
+
+        },
+        // 在method属性里面写函数方法
+        method:{
+            handle:function(){
+                alert("你点我了一下")
+            }
+        }
+    })
+
+
+
+    new Vue({
+        el:'#app',
+        data:{
+            age:20
+        },
+        method:{
+            
+        }
+    })
+
+
+
+    new Vue({
+        el:'#app',
+        data:{
+            addrs:["北京","上海","郑州"]
+
+        },
+        method:{
+
+        }
+    })
+
+
+
+
+
+
+</script>
+</html>
